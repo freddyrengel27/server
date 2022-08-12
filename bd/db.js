@@ -8,7 +8,7 @@ const configPool = {
     host: process.env.DB_HOST,
     password: process.env.DB_PASSWORD,
     database: process.env.DB_DATATABLES,
-    port: process.env.DB_PORT
+    port: process.env.DB_CONN
 };
 
 
