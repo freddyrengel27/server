@@ -19,8 +19,8 @@ const registerUser = async (req, res) =>{
 
     const id = resId.rows[0].id_user;
 
-    let query = "INSERT INTO userInfo(names, surname, dateBirth, nationality, docIdentity, location, user_id) VALUES($1, $2, $3, $4, $5, $6, $7)";
-    await pool.query(query, [persona.nombre, persona.apellido, persona.fechaNac, persona.nacionalidad, `${persona.tipoDocumento} - ${persona.numeroDocumento}`, `${persona.paisUbicacion} - ${persona.regiosUbicacion} - ${persona.cityUbicacion}`, id])
+    let query = "INSERT INTO userInfo(names, surname, dateBirth, nationality, docIdentity, tlf, location, user_id) VALUES($1, $2, $3, $4, $5, $6, $7, $8)";
+    await pool.query(query, [persona.nombre, persona.apellido, persona.fechaNac, persona.nacionalidad, `${persona.tipoDocumento} - ${persona.numeroDocumento}`, `${persona.codigoTlf} - ${persona.telefono}` `${persona.paisUbicacion} - ${persona.regiosUbicacion} - ${persona.cityUbicacion}`, id])
 
 
 
