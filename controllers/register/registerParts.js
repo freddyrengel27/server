@@ -6,8 +6,6 @@ import pool from "../../bd/db.js";
 
 export const registerExpLaboral = async (id, values) =>{
 
-    console.log(values)
-
     if(values){
 
         const trabajosKeys = Object.keys(values).filter(el => el[0] == "t");

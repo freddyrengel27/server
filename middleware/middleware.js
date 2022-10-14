@@ -13,7 +13,6 @@ const middleware = (req, res, next) =>{
     try {
         
         const payload = jwt.decode(token, process.env.JWT_SECRET);
-        console.log(payload)
         req.userInfo = payload;
 
         next();

@@ -112,7 +112,30 @@ const getInfo = {
         return res.status(200).send({
            info
         })
+    },
+
+    getApi: async (req, res) =>{
+
+        const {id} = req.params;
+
+        let queryUser = "SELECT userInfo.names, userInfo.surname, userInfo.nationality, userInfo.docIdentity, userInfo.tlf, userInfo.profesion, userInfo.location, users.email FROM userInfo LEFT JOIN users ON users.id_user = userInfo.user_id WHERE userInfo.user_id = $1";
+
+        const resUserInfo = await pool.query(queryUser, [id])
+
+        let queryEtiqueta = "SELECT etiqueta FROM etiquetaTrabajo WHERE user_id = $1";
+
+        const resUserEtiqueta = await pool.query(queryEtiqueta, [id]);
+
+
+        return res.status(200).send({
+            data: {
+                info: resUserInfo.rows,
+                etiquetas: resUserEtiqueta.rows
+            }
+        });
+
     }
+
 };
 
 export default getInfo;
