@@ -75,7 +75,8 @@ const addInfo = {
 
         const id = req.userInfo.id;
 
-        registerSkills(id, [req.body]);
+         await registerSkills(id, [req.body]);
+
 
         return res.status(200).send({
             msg: "Registro realizado con exito"

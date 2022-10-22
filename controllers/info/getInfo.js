@@ -12,7 +12,7 @@ const getInfo = {
 
         if(info == "user"){
 
-            let queryUser = "SELECT userInfo.*, users.username, users.email FROM userInfo LEFT JOIN users ON users.id_user = userInfo.user_id WHERE userInfo.user_id = $1";
+            let queryUser = "SELECT userInfo.*, users.username, users.imguser, users.email FROM userInfo LEFT JOIN users ON users.id_user = userInfo.user_id WHERE userInfo.user_id = $1";
             const resUser = await pool.query(queryUser, [valor]);
 
             return res.status(200).send({

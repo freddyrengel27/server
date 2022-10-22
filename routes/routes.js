@@ -1,4 +1,5 @@
 import {Router} from "express";
+import multer from "multer";
 
 import registerUser from "../controllers/register/register.js";
 import controllersLogin from "../controllers/login/login.js";
@@ -8,8 +9,12 @@ import addInfo from "../controllers/register/registerPage.js";
 import actJobs from "../controllers/actualizar/actJobs.js";
 import actFormacion from "../controllers/actualizar/actFormacion.js";
 import actSkills from "../controllers/actualizar/actSkills.js";
+import uploadImgUser from "../controllers/uploadFiles/uploadImgUser.js";
+import storage from "../services/multer/multerConfig.js";
+import actUserInfo from "../controllers/actualizar/actUserInfo.js";
 
 
+const upload = multer({storage});
 const routes = Router();
 
 routes.post("/register", registerUser);
@@ -28,6 +33,7 @@ routes.post("/addSkill", middleware, addInfo.skill);
 
 
 
+routes.put("/actualizarInfo", middleware, actUserInfo.actualizarInfo);
 routes.put("/actualizarExp", middleware, actJobs.actualizar);
 routes.put("/actualizarEst", middleware, actFormacion.actualizarEst);
 routes.put("/actualizarCur", middleware, actFormacion.actualizarCur);
@@ -41,6 +47,9 @@ routes.delete("/deleteEst:id", middleware, actFormacion.deleteEst);
 routes.delete("/deleteCur:id", middleware, actFormacion.deleteCur);
 routes.delete("/deleteIdioma:id", middleware, actSkills.deleteIdioma);
 routes.delete("/deleteSkill:id", middleware, actSkills.deleteSkill);
+
+
+routes.post("/addImgUser", middleware,  upload.single("img"), uploadImgUser)
 
 
 

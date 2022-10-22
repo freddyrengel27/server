@@ -6,7 +6,6 @@ const actFormacion = {
     
     actualizarEst: async (req, res) =>{
         try {
-            console.log(req.body)
             const {id, tipoEstudio, estudio, institucion, estudioTerminado, dateInic, dateFin} = req.body;
             
             let queryUpdate = "UPDATE studies SET typestudies = $1, study  = $2, institution  = $3, statestudy  = $4, datestartstudy = $5, datefinalstudy = $6 WHERE id_studies = $7";
