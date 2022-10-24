@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 
 import pool from "../../bd/db.js";
+import sendMailNewUser from "./mailNewUser.js";
 
 import { registerFormacion, registerExpLaboral, registerIdiomas, registerSkills, registerEtiquetaTrabajo} from "./registerParts.js";
 
@@ -60,6 +61,9 @@ const registerUser = async (req, res) =>{
         if(trabajo.etiquetas){
             await registerEtiquetaTrabajo(id, trabajo.etiquetas);
         }
+
+
+        sendMailNewUser(id, cuenta.username, cuenta.email)
 
 
         return res.status(200).send({

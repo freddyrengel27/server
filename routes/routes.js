@@ -12,6 +12,8 @@ import actSkills from "../controllers/actualizar/actSkills.js";
 import uploadImgUser from "../controllers/uploadFiles/uploadImgUser.js";
 import storage from "../services/multer/multerConfig.js";
 import actUserInfo from "../controllers/actualizar/actUserInfo.js";
+import actPass from "../controllers/actualizar/actPass.js";
+import validateUser from "../controllers/register/validateUser.js";
 
 
 const upload = multer({storage});
@@ -49,7 +51,12 @@ routes.delete("/deleteIdioma:id", middleware, actSkills.deleteIdioma);
 routes.delete("/deleteSkill:id", middleware, actSkills.deleteSkill);
 
 
-routes.post("/addImgUser", middleware,  upload.single("img"), uploadImgUser)
+routes.post("/addImgUser", middleware,  upload.single("img"), uploadImgUser);
+
+routes.post("/checkuser", validateUser);
+
+routes.post("/userpasswordChange", actPass);
+
 
 
 
