@@ -13,7 +13,9 @@ import uploadImgUser from "../controllers/uploadFiles/uploadImgUser.js";
 import storage from "../services/multer/multerConfig.js";
 import actUserInfo from "../controllers/actualizar/actUserInfo.js";
 import actPass from "../controllers/actualizar/actPass.js";
+import recoveryPass from "../controllers/actualizar/recoveryPass.js";
 import validateUser from "../controllers/register/validateUser.js";
+
 
 
 const upload = multer({storage});
@@ -56,6 +58,8 @@ routes.post("/addImgUser", middleware,  upload.single("img"), uploadImgUser);
 routes.post("/checkuser", validateUser);
 
 routes.post("/userpasswordChange", actPass);
+
+routes.post("/changepassoword", recoveryPass)
 
 
 
