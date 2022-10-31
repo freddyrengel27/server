@@ -20,7 +20,8 @@ const uploadImgUser = async (req, res) =>{
         await fs.unlink(path);
 
         return res.status(200).send({
-            msg: "Ruta imagen"
+            msg: "Ruta imagen",
+            urlImg: url
         })
         
     } catch (error) {
@@ -30,10 +31,6 @@ const uploadImgUser = async (req, res) =>{
         })
         
     }
-
-   
-
-
    
 };
 

@@ -15,6 +15,7 @@ import actUserInfo from "../controllers/actualizar/actUserInfo.js";
 import actPass from "../controllers/actualizar/actPass.js";
 import recoveryPass from "../controllers/actualizar/recoveryPass.js";
 import validateUser from "../controllers/register/validateUser.js";
+import actImgUrl from "../controllers/actualizar/actImgUrl.js";
 
 
 
@@ -54,12 +55,15 @@ routes.delete("/deleteSkill:id", middleware, actSkills.deleteSkill);
 
 
 routes.post("/addImgUser", middleware,  upload.single("img"), uploadImgUser);
+routes.post("/addUrlImgUser", middleware, actImgUrl);
+
 
 routes.post("/checkuser", validateUser);
 
 routes.post("/userpasswordChange", actPass);
 
 routes.post("/changepassoword", recoveryPass)
+
 
 
 
