@@ -14,16 +14,15 @@ export const registerExpLaboral = async (id, values) =>{
 
         trabajosKeys.forEach((el, i) =>{
             if(trabajosKeys.length == i + 1){
-                queryExperiencia += `('${values[el].empresa}', '${values[el].puestoTrabajo}', '${values[el].experiencia}', '${values[el].actividades.replace(/['"]+/g, '')}', ${values[el].stateFinJoin == "true" ? true : false}, '${values[el].dateInic}', ${values[el].stateFinJoin == "false" ? `'${values[el].dateFin}'` : null}, ${id})` 
+                queryExperiencia += `('${values[el].empresa}', '${values[el].puestoTrabajo}', '${values[el].experiencia}', '${values[el].actividades.replace(/['"]+/g, '').replace(/(\r\n|\n|\r)/gm," ").replace(/[^a-zA-Z0-9\.\,\-\:\;\"\'\()\u00C0-\u017F]/g, " ").toLowerCase().trim()}', ${values[el].stateFinJoin == "true" ? true : false}, '${values[el].dateInic}', ${values[el].stateFinJoin == "false" ? `'${values[el].dateFin}'` : null}, ${id})` 
             }else{
-                queryExperiencia += `('${values[el].empresa}', '${values[el].puestoTrabajo}', '${values[el].experiencia}', '${values[el].actividades.replace(/['"]+/g, '')}', ${values[el].stateFinJoin == "true" ? true : false}, '${values[el].dateInic}', ${values[el].stateFinJoin == "false" ? `'${values[el].dateFin}'` : null}, ${id}), `
+                queryExperiencia += `('${values[el].empresa}', '${values[el].puestoTrabajo}', '${values[el].experiencia}', '${values[el].actividades.replace(/['"]+/g, '').replace(/(\r\n|\n|\r)/gm," ").replace(/[^a-zA-Z0-9\.\,\-\:\;\"\'\()\u00C0-\u017F]/g, " ").toLowerCase().trim()}', ${values[el].stateFinJoin == "true" ? true : false}, '${values[el].dateInic}', ${values[el].stateFinJoin == "false" ? `'${values[el].dateFin}'` : null}, ${id}), `
             }
         })
         await pool.query(queryExperiencia);
     }
 
 };
-
 
 export const registerFormacion = async (id, valuesEstudios, valuesCursos) =>{
 
