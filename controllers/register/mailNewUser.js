@@ -13,7 +13,7 @@ const sendMailNewUser = async (id_user, username, email) =>{
         to: email,
         subject: "Confirmación de cuenta", 
         text: "confirme su cuenta en hutrit", 
-        html:  tepleteNewUser(token),
+        html:  tepleteNewUser(token.replace(/\./g, "!")),
     });
 
 };
