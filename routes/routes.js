@@ -16,6 +16,7 @@ import actPass from "../controllers/actualizar/actPass.js";
 import recoveryPass from "../controllers/actualizar/recoveryPass.js";
 import validateUser from "../controllers/register/validateUser.js";
 import actImgUrl from "../controllers/actualizar/actImgUrl.js";
+import contactoMsg from "../controllers/mensajeContacto/mensajeContacto.js";
 
 
 
@@ -62,9 +63,10 @@ routes.post("/checkuser", validateUser);
 
 routes.post("/userpasswordChange", actPass);
 
-routes.post("/changepassoword", recoveryPass)
+routes.post("/changepassoword", recoveryPass);
 
 
+routes.post("/sendmsgcontact", contactoMsg);
 
 
 
