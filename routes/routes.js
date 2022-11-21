@@ -17,6 +17,7 @@ import recoveryPass from "../controllers/actualizar/recoveryPass.js";
 import validateUser from "../controllers/register/validateUser.js";
 import actImgUrl from "../controllers/actualizar/actImgUrl.js";
 import contactoMsg from "../controllers/mensajeContacto/mensajeContacto.js";
+import getInfoApi from "../controllers/paisesApi/infoPaises.js";
 
 
 
@@ -67,6 +68,11 @@ routes.post("/changepassoword", recoveryPass);
 
 
 routes.post("/sendmsgcontact", contactoMsg);
+
+
+routes.get("/getPaises", getInfoApi.getPaisInfo);
+routes.get("/getStates/:id", getInfoApi.getStatesInfo);
+routes.get("/getCities/:id", getInfoApi.getCitiesInfo);
 
 
 
