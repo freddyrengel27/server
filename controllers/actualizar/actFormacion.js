@@ -1,5 +1,5 @@
 
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
 
 
 const actFormacion = {
@@ -97,4 +97,4 @@ const actFormacion = {
 
 };
 
-export default actFormacion;
+module.exports = actFormacion;

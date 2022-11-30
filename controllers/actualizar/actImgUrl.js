@@ -1,4 +1,4 @@
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
 
 const actImgUrl = async (req, res) =>{
     try {
@@ -23,4 +23,4 @@ const actImgUrl = async (req, res) =>{
 
 };
 
-export default actImgUrl;
+module.exports = actImgUrl;

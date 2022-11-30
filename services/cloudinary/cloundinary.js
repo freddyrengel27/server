@@ -1,4 +1,4 @@
-import cloudinary from "cloudinary";
+const cloudinary = require("cloudinary");
 
 const uploadCloud = async (path) =>{
     cloudinary.config({
@@ -11,4 +11,4 @@ const uploadCloud = async (path) =>{
     return upload;
 };
 
-export default uploadCloud;
+module.exports = uploadCloud;

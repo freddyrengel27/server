@@ -1,9 +1,9 @@
-import bcrypt from "bcrypt";
+const bcrypt = require("bcrypt");
 
-import pool from "../../bd/db.js";
-import sendMailNewUser from "./mailNewUser.js";
+const pool = require("../../bd/db.js");
+const sendMailNewUser = require("./mailNewUser.js");
 
-import { registerFormacion, registerExpLaboral, registerIdiomas, registerSkills, registerEtiquetaTrabajo} from "./registerParts.js";
+const { registerFormacion, registerExpLaboral, registerIdiomas, registerSkills, registerEtiquetaTrabajo} = require("./registerParts.js");
 
 const registerUser = async (req, res) =>{
 
@@ -79,4 +79,4 @@ const registerUser = async (req, res) =>{
 
 };
 
-export default registerUser;
+module.exports = registerUser;

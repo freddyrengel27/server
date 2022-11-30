@@ -1,8 +1,8 @@
-import express from "express";
-import morgan from "morgan";
-import cors from "cors";
+const express = require("express");
+const morgan = require("morgan");
+const cors = require("cors");
 
-import routes from "./routes/routes.js";
+const routes = require("./routes/routes.js");
 
 
 const app = express();
@@ -14,4 +14,4 @@ app.use(morgan("dev"));
 
 app.use("/hutritBack", routes);
 
-export default app;
+module.exports = app;

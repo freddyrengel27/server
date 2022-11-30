@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
     host: process.env.MAIL_SEND_HOST,
@@ -13,4 +13,4 @@ const transporter = nodemailer.createTransport({
 transporter.verify().then(() => console.log("Ready for send emails"));
 
 
-export default transporter;
+module.exports = transporter;

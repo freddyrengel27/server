@@ -1,9 +1,9 @@
 
-import bcrypt from "bcrypt";
-import jwt from "jwt-simple";
+const bcrypt = require("bcrypt");
+const jwt = require("jwt-simple");
 
-import pool from "../../bd/db.js";
-import getJwt from "../../services/jwt/getJwt.js";
+const pool = require("../../bd/db.js");
+const getJwt = require("../../services/jwt/getJwt.js");
 
 
 
@@ -58,4 +58,4 @@ const controllersLogin = {
 
 };
 
-export default controllersLogin;
+module.exports = controllersLogin;

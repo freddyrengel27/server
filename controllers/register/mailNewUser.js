@@ -1,6 +1,6 @@
-import transporter from "../../services/email/email.js";
-import tokenNewUser from "../../services/jwt/tokenNewUser.js";
-import { tepleteNewUser } from "../../templates/teplatesMail.js";
+const transporter = require("../../services/email/email.js");
+const tokenNewUser = require("../../services/jwt/tokenNewUser.js");
+const { tepleteNewUser } = require("../../templates/teplatesMail.js");
 
 
 const sendMailNewUser = async (id_user, username, email) =>{
@@ -18,4 +18,4 @@ const sendMailNewUser = async (id_user, username, email) =>{
 
 };
 
-export default sendMailNewUser;
+module.exports = sendMailNewUser;

@@ -1,5 +1,5 @@
-import dotenv from "dotenv";
-import pg from "pg";
+const dotenv = require("dotenv");
+const pg = require("pg");
 dotenv.config({path: "./.env"});
 
 
@@ -14,4 +14,4 @@ const configPool = {
 
 const pool = new pg.Pool(configPool);
 
-export default pool
+module.exports = pool;

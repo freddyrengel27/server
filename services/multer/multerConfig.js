@@ -1,5 +1,5 @@
-import {diskStorage} from "multer";
-import dayjs from "dayjs";
+const {diskStorage} = require("multer");
+const dayjs = require("dayjs");
 
 const storage = diskStorage({
     destination: "./uploadFiles",
@@ -10,4 +10,4 @@ const storage = diskStorage({
     
 });
 
-export default storage;
+module.export = storage;

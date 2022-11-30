@@ -1,7 +1,8 @@
-import fs from "fs/promises";
+const fs = require("fs-extra");
 
-import pool from "../../bd/db.js";
-import uploadCloud from "../../services/cloudinary/cloundinary.js";
+const pool = require("../../bd/db.js");
+
+const uploadCloud = require("../../services/cloudinary/cloundinary.js");
 
 
 const uploadImgUser = async (req, res) =>{
@@ -34,4 +35,4 @@ const uploadImgUser = async (req, res) =>{
    
 };
 
-export default uploadImgUser
+module.exports = uploadImgUser

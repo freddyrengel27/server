@@ -1,8 +1,9 @@
-import dayjs from "dayjs";
-import jwt from "jwt-simple";
-import bcrypt from "bcrypt";
+const dayjs = require("dayjs");
+const jwt = require("jwt-simple");
+const bcrypt = require("bcrypt");
 
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 const recoveryPass = async (req, res) =>{
     try {
@@ -38,5 +39,5 @@ const recoveryPass = async (req, res) =>{
 
 };
 
-export default recoveryPass;
+module.exports = recoveryPass;
 

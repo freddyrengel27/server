@@ -1,10 +1,10 @@
 
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
 
 
 
 
-export const registerExpLaboral = async (id, values) =>{
+const registerExpLaboral = async (id, values) =>{
 
     if(values){
 
@@ -24,7 +24,7 @@ export const registerExpLaboral = async (id, values) =>{
 
 };
 
-export const registerFormacion = async (id, valuesEstudios, valuesCursos) =>{
+const registerFormacion = async (id, valuesEstudios, valuesCursos) =>{
 
     if(valuesEstudios){
 
@@ -65,7 +65,7 @@ export const registerFormacion = async (id, valuesEstudios, valuesCursos) =>{
 
 };
 
-export const registerIdiomas = async (id, values) =>{
+const registerIdiomas = async (id, values) =>{
 
     if(values){
 
@@ -84,7 +84,7 @@ export const registerIdiomas = async (id, values) =>{
     }
 };
 
-export const registerSkills = async (id, valuesTec) =>{
+const registerSkills = async (id, valuesTec) =>{
 
     if(valuesTec){
         let querySkills = "INSERT INTO skills(skill, experience, user_id) VALUES";
@@ -101,7 +101,7 @@ export const registerSkills = async (id, valuesTec) =>{
     }
 };
 
-export const registerEtiquetaTrabajo = async (id, values) =>{
+const registerEtiquetaTrabajo = async (id, values) =>{
 
     if(values){
         let queryEtiqueta = "INSERT INTO etiquetaTrabajo(etiqueta, user_id) VALUES";
@@ -117,3 +117,5 @@ export const registerEtiquetaTrabajo = async (id, values) =>{
         await pool.query(queryEtiqueta);
     }
 };
+
+module.exports = {registerExpLaboral, registerFormacion, registerIdiomas, registerSkills, registerEtiquetaTrabajo};

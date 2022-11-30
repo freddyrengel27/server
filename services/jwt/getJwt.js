@@ -1,4 +1,4 @@
-import jwt from "jwt-simple";
+const jwt = require("jwt-simple");
 
 const getJwt = ({id_user, username, email}) =>{
 
@@ -11,4 +11,4 @@ const getJwt = ({id_user, username, email}) =>{
     return jwt.encode(payload, process.env.JWT_SECRET);
 };
 
-export default getJwt;
+module.exports = getJwt;

@@ -1,4 +1,5 @@
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 const getInfoApi = {
 
@@ -63,4 +64,4 @@ const getInfoApi = {
     }
 };
 
-export default getInfoApi;
+module.exports = getInfoApi;

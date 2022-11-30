@@ -1,4 +1,5 @@
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 
 const actSkills = {
@@ -82,4 +83,4 @@ const actSkills = {
     }
 };
 
-export default actSkills;
+module.exports = actSkills;

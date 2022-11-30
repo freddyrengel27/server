@@ -1,5 +1,5 @@
-import jwt from "jwt-simple";
-import dayjs from "dayjs";
+const jwt = require("jwt-simple");
+const dayjs = require("dayjs");
 
 const tokenNewUser = (id_user) =>{
 
@@ -10,4 +10,4 @@ const tokenNewUser = (id_user) =>{
     return jwt.encode(payload, process.env.JWT_SECRET);
 };
 
-export default tokenNewUser;
+module.exports = tokenNewUser;

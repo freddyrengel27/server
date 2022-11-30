@@ -1,9 +1,9 @@
 
-import transporter from "../../services/email/email.js";
-import { tepleteCambiosPass } from "../../templates/teplatesMail.js";
-import sendMailNewUser from "../register/mailNewUser.js";
-import pool from "../../bd/db.js";
-import tokenNewUser from "../../services/jwt/tokenNewUser.js";
+const transporter = require("../../services/email/email.js");
+const { tepleteCambiosPass } = require("../../templates/teplatesMail.js");
+const sendMailNewUser = require("../register/mailNewUser.js");
+const pool = require("../../bd/db.js");
+const tokenNewUser = require("../../services/jwt/tokenNewUser.js");
 
 
 const actPass = async (req, res) =>{
@@ -38,6 +38,5 @@ const actPass = async (req, res) =>{
 
 };
 
-export default actPass;
-
+module.exports = actPass;
 

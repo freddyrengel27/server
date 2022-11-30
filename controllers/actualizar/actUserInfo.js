@@ -1,5 +1,6 @@
 
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 const actUserInfo = {
 
@@ -75,4 +76,4 @@ const actUserInfo = {
 
 };
 
-export default actUserInfo;
+module.exports = actUserInfo;

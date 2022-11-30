@@ -1,4 +1,4 @@
-import { registerExpLaboral, registerFormacion, registerIdiomas, registerSkills } from "./registerParts.js";
+const { registerExpLaboral, registerFormacion, registerIdiomas, registerSkills } = require("./registerParts.js");
 
 
 const addInfo = {
@@ -92,4 +92,4 @@ const addInfo = {
 
 };
 
-export default addInfo;
+module.exports = addInfo;

@@ -1,23 +1,23 @@
-import {Router} from "express";
-import multer from "multer";
+const {Router} = require("express");
+const multer = require("multer");
 
-import registerUser from "../controllers/register/register.js";
-import controllersLogin from "../controllers/login/login.js";
-import getInfo from "../controllers/info/getInfo.js";
-import middleware from "../middleware/middleware.js"
-import addInfo from "../controllers/register/registerPage.js";
-import actJobs from "../controllers/actualizar/actJobs.js";
-import actFormacion from "../controllers/actualizar/actFormacion.js";
-import actSkills from "../controllers/actualizar/actSkills.js";
-import uploadImgUser from "../controllers/uploadFiles/uploadImgUser.js";
-import storage from "../services/multer/multerConfig.js";
-import actUserInfo from "../controllers/actualizar/actUserInfo.js";
-import actPass from "../controllers/actualizar/actPass.js";
-import recoveryPass from "../controllers/actualizar/recoveryPass.js";
-import validateUser from "../controllers/register/validateUser.js";
-import actImgUrl from "../controllers/actualizar/actImgUrl.js";
-import contactoMsg from "../controllers/mensajeContacto/mensajeContacto.js";
-import getInfoApi from "../controllers/paisesApi/infoPaises.js";
+const registerUser = require("../controllers/register/register.js");
+const controllersLogin = require("../controllers/login/login.js");
+const getInfo = require("../controllers/info/getInfo.js");
+const middleware = require("../middleware/middleware.js");
+const addInfo = require("../controllers/register/registerPage.js");
+const actJobs = require("../controllers/actualizar/actJobs.js");
+const actFormacion = require("../controllers/actualizar/actFormacion.js");
+const actSkills = require("../controllers/actualizar/actSkills.js");
+const uploadImgUser = require("../controllers/uploadFiles/uploadImgUser.js");
+const storage = require("../services/multer/multerConfig.js");
+const actUserInfo = require("../controllers/actualizar/actUserInfo.js");
+const actPass = require("../controllers/actualizar/actPass.js");
+const recoveryPass = require("../controllers/actualizar/recoveryPass.js");
+const validateUser = require("../controllers/register/validateUser.js");
+const actImgUrl = require("../controllers/actualizar/actImgUrl.js");
+const contactoMsg = require("../controllers/mensajeContacto/mensajeContacto.js");
+const getInfoApi = require("../controllers/paisesApi/infoPaises.js");
 
 
 
@@ -77,4 +77,4 @@ routes.get("/getCities/:id", getInfoApi.getCitiesInfo);
 
 
 
-export default routes;
+module.exports = routes;

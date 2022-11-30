@@ -1,5 +1,5 @@
 
-export const tepleteNewUser = (token) =>{
+const tepleteNewUser = (token) =>{
 
     const url = `hutrit-proyect.firebaseapp.com/checkuser${token}`;
 
@@ -150,7 +150,7 @@ export const tepleteNewUser = (token) =>{
 </body>`
 }
 
-export const tepleteCambiosPass = (token) =>{
+const tepleteCambiosPass = (token) =>{
 
     const url = `hutrit-proyect.firebaseapp.com/recoverypassword/${token}`;
 
@@ -300,3 +300,5 @@ export const tepleteCambiosPass = (token) =>{
     </center>
 </body>`
 }
+
+module.exports = {tepleteNewUser, tepleteCambiosPass};

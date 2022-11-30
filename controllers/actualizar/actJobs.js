@@ -1,5 +1,6 @@
 
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 const actJobs = {
 
@@ -53,4 +54,4 @@ const actJobs = {
 
 };
 
-export default actJobs;
+module.exports = actJobs;

@@ -1,6 +1,6 @@
-import dayjs from "dayjs";
-import jwt from "jwt-simple";
-import pool from "../../bd/db.js";
+const dayjs = require("dayjs");
+const jwt = require("jwt-simple") ;
+const pool = require("../../bd/db.js") ;
 
 
 const validateUser = async (req, res) =>{
@@ -27,4 +27,4 @@ const validateUser = async (req, res) =>{
     }
 };
 
-export default validateUser;
+module.exports = validateUser;

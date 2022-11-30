@@ -1,6 +1,6 @@
 
+const pool = require("../../bd/db.js");
 
-import pool from "../../bd/db.js";
 
 const getInfo = {
 
@@ -138,4 +138,4 @@ const getInfo = {
 
 };
 
-export default getInfo;
+module.exports = getInfo;

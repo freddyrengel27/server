@@ -1,4 +1,5 @@
-import pool from "../../bd/db.js";
+const pool = require("../../bd/db.js");
+
 
 
 const contactoMsg = async (req, res) =>{
@@ -23,4 +24,4 @@ const contactoMsg = async (req, res) =>{
     }
 };
 
-export default contactoMsg;
+module.exports = contactoMsg;

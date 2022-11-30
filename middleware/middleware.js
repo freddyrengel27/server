@@ -1,5 +1,5 @@
-import jwt from "jwt-simple";
-import dayjs from "dayjs";
+const jwt = require("jwt-simple");
+const dayjs = require("dayjs");
 
 const middleware = (req, res, next) =>{
 
@@ -27,4 +27,4 @@ const middleware = (req, res, next) =>{
  
 };
 
-export default middleware;
+module.exports = middleware;
